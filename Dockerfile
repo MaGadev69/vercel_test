@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y curl
 RUN pip install reflex
 
 # Copia solo la carpeta exportada por Reflex
-COPY .web /app
+COPY . /app/.
 
 # Exporta (build) en producción
 RUN reflex export --env prod
