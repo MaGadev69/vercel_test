@@ -4,20 +4,26 @@ FROM python:3.11-slim
 ENV PYTHONUNBUFFERED=1
 
 # Instala dependencias necesarias
-RUN apt-get update && apt-get install -y curl git && apt-get clean
+RUN apt-get update && apt-get install -y curl unzip
+
+# Instala bun
+RUN curl -fsSL https://bun.sh/install | bash
+
+# Agrega bun al PATH
+ENV PATH="/root/.bun/bin:$PATH"
 
 # Instala Reflex
 RUN pip install reflex
 
-# Crea el directorio de trabajo
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copia el contenido del proyecto
+# Copia todos los archivos del proyecto
 COPY . .
 
-# Exporta (build) la app para producción
-RUN echo "Iniciando export de Reflex..." && reflex export --env prod
+# Exporta el frontend (build para producción)
+RUN reflex export --env prod
 
-
-# Comando por defecto para correr la app
+# Corre el servidor Reflex
 CMD ["reflex", "run", "--env", "prod"]
+
