@@ -16,7 +16,8 @@ WORKDIR /app
 COPY . .
 
 # Exporta (build) la app para producción
-RUN reflex export --env prod
+RUN echo "Iniciando export de Reflex..." && reflex export --env prod
+
 
 # Comando por defecto para correr la app
 CMD ["reflex", "run", "--env", "prod"]

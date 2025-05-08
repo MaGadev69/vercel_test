@@ -8,36 +8,6 @@ import NextHead from "next/head"
 
 
 
-export function Fragment_c410719da887402f78ba4109549acfdd () {
-  
-  const reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state = useContext(StateContexts.reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state)
-
-
-
-
-
-  
-  return (
-    <Fragment>
-
-{!((reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state.error_message === "")) ? (
-  <Fragment>
-
-<p>
-
-{reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state.error_message}
-</p>
-</Fragment>
-) : (
-  <Fragment>
-
-{null}
-</Fragment>
-)}
-</Fragment>
-  )
-}
-
 export function Div_8efe347d5e846ba2a2f7f938ec342f28 () {
   
   
@@ -77,6 +47,36 @@ export function P_d1c4f46822db604f21686631d3493d85 () {
 
 {reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state.cantidad_activos}
 </p>
+  )
+}
+
+export function Fragment_c410719da887402f78ba4109549acfdd () {
+  
+  const reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state = useContext(StateContexts.reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state)
+
+
+
+
+
+  
+  return (
+    <Fragment>
+
+{!((reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state.error_message === "")) ? (
+  <Fragment>
+
+<p>
+
+{reflex___state____state__integracion_minimal_web_page___states___stock_state____stock_state.error_message}
+</p>
+</Fragment>
+) : (
+  <Fragment>
+
+{null}
+</Fragment>
+)}
+</Fragment>
   )
 }
 
