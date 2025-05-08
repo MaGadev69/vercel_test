@@ -3,27 +3,24 @@ FROM python:3.11-slim
 # Evita buffering en logs
 ENV PYTHONUNBUFFERED=1
 
-# Instala dependencias necesarias
-RUN apt-get update && apt-get install -y curl unzip
-
-# Instala bun
-RUN curl -fsSL https://bun.sh/install | bash
-
-# Agrega bun al PATH
-ENV PATH="/root/.bun/bin:$PATH"
+# Instala dependencias del sistema
+RUN apt-get update && apt-get install -y curl git build-essential
 
 # Instala Reflex
 RUN pip install reflex
 
-# Establece el directorio de trabajo
+# Crea directorio de trabajo
 WORKDIR /app
 
-# Copia todos los archivos del proyecto
-COPY . .
+# Copia todo el proyecto
+COPY . /app
 
-# Exporta el frontend (build para producción)
+# Exporta en producción
 RUN reflex export --env prod
 
-# Corre el servidor Reflex
+# Expone el puerto por defecto de Reflex (puede cambiar según tu config)
+EXPOSE 3000
+
+# Comando para correr la app
 CMD ["reflex", "run", "--env", "prod"]
 

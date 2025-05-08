@@ -17,10 +17,10 @@ import { EventLoopProvider, StateProvider, defaultColorMode } from "$/utils/cont
 import { ThemeProvider } from 'next-themes'
 import * as React from "react";
 import * as utils_context from "$/utils/context";
-import * as emotion_react from "@emotion/react";
 import * as next_link from "next/link";
 import * as utils_components from "$/utils/components";
 import * as utils_state from "$/utils/state";
+import * as emotion_react from "@emotion/react";
 import * as radix_ui_themes from "@radix-ui/themes";
 
 
@@ -66,10 +66,10 @@ export default function MyApp({ Component, pageProps }) {
     let windowImports = {
       "react": React,
       "$/utils/context": utils_context,
-      "@emotion/react": emotion_react,
       "next/link": next_link,
       "$/utils/components": utils_components,
       "$/utils/state": utils_state,
+      "@emotion/react": emotion_react,
       "@radix-ui/themes": radix_ui_themes,
     };
     window["__reflex"] = windowImports;
