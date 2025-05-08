@@ -14,7 +14,8 @@ WORKDIR /app
 COPY . /app
 
 # Exporta (build) en producción
-RUN reflex export --env production
+RUN reflex export --env prod
+
 
 # Corre el backend + frontend
 CMD ["reflex", "run", "--env", "prod"]
