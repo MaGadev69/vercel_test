@@ -17,4 +17,4 @@ COPY . /app
 RUN reflex export --env production
 
 # Corre el backend + frontend
-CMD ["reflex", "run", "--env", "production"]
+CMD ["reflex", "run", "--env", "prod"]
