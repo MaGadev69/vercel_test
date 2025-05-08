@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11-slim
 
 # Evita buffering en logs
 ENV PYTHONUNBUFFERED=1
@@ -9,9 +9,8 @@ RUN apt-get update && apt-get install -y curl
 # Instala Reflex
 RUN pip install reflex
 
-# Copia tu app
-WORKDIR /app
-COPY . /app
+# Copia solo la carpeta exportada por Reflex
+COPY .web /app
 
 # Exporta (build) en producción
 RUN reflex export --env prod
